@@ -1,7 +1,9 @@
+
 import React from "react";
 import { Text, Pressable, Box, VStack, HStack, Heading } from "@gluestack-ui/themed";
 import { IconDelete, IconEdit } from "../../../assets";
 import { useNavigation } from "@react-navigation/native";
+import { deleteNote } from "../../../actions/AuthAction";
 
 const ListNote = ({ judul, isi, tanggal, status, category, noteId }) => {
   const navigation = useNavigation();
@@ -17,7 +19,7 @@ const ListNote = ({ judul, isi, tanggal, status, category, noteId }) => {
   };
 
   const handleDeleteClick = () => {
-    // deleteNote(noteId);
+    deleteNote(noteId);
     navigation.replace("MainApp");
   };
 
@@ -74,3 +76,4 @@ const ListNote = ({ judul, isi, tanggal, status, category, noteId }) => {
 };
 
 export default ListNote;
+
